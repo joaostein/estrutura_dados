@@ -17,7 +17,7 @@ Pilha *create () {
     return p;
 }
 
-// Push
+// Push (Empilha um novo elemento no topo da pilha)
 
 void push (Pilha *p, int dado) {
     if (p->topo >= TAM - 1) {
@@ -28,7 +28,7 @@ void push (Pilha *p, int dado) {
     }
 }
 
-// Seek
+// Seek (Verifica se a pilha está vazia, caso não esteja, retorna o valor do elemento que se encontra no topo)
 
 int seek (Pilha *p) {
     if (isEmpty(p)) {
@@ -40,7 +40,7 @@ int seek (Pilha *p) {
     }
 }
 
-// Pop
+// Pop (Remove o elemento que está no topo da pilha)
 
 void pop (Pilha *p) {
     if (isEmpty(p)) {
@@ -50,22 +50,20 @@ void pop (Pilha *p) {
     }
 }
 
-// isEmpty?
+// isEmpty? (Verifica se a pilha em questão encontra-se vazia)
 
 int isEmpty (Pilha *p) {
     return p->topo == -1;
 }
 
 
-
 int main () {
-    
+
     Pilha *p = create();
 
     push(p, 182);
     printf("topo[0]: %d\n", seek(p));
     pop(p);
-
 
     return 0;
 }
