@@ -32,7 +32,7 @@ void push (Fila *f, int elemento) {
 // Pop (Remove o elemento que se encontra no início da fila)
 
 int pop (Fila *f) {
-    if (f->quantidadeElementos == 0) {
+    if (isEmpty(f)) {
         printf("Impossível remover elementos. A fila está vazia.\n");
     } else {
         int elemento = f->elemento[f->inicio];
@@ -46,7 +46,7 @@ int pop (Fila *f) {
 // Seek (Retorna o valor que está no início da fila)
 
 int seek (Fila *f) {
-    if (f->quantidadeElementos == 0) {
+    if (isEmpty(f)) {
         printf("Impossível consultar o dado do primeiro da fila. A fila está vazia.\n");
     } else {
         return f->elemento[f->inicio];
@@ -55,8 +55,9 @@ int seek (Fila *f) {
 
 // isEmpty? (Verifica se a fila está vazia)
 
-
-
+int isEmpty (Fila *f) {
+    return f->quantidadeElementos == 0;
+}
 
 
 int main () {
