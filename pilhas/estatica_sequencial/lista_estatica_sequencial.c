@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define TAM 10
+#define TAM 3
 
 
 typedef struct Pilha {
@@ -19,6 +19,15 @@ Pilha *create () {
 
 // Push
 
+void push (Pilha *p, int dado) {
+    if (p->topo >= TAM - 1) {
+        printf("Impossível adicionar novo elemento. A Pilha está totalmente cheia\n");
+    } else {
+        p->topo ++;
+        p->dado[p->topo] = dado;
+    }
+}
+
 // Seek
 
 // Pop
@@ -27,9 +36,12 @@ Pilha *create () {
 
 
 int main () {
+    
     Pilha *p = create();
 
-    printf("topo: %d\n", p->topo);
+    push(p, 15);
+    
+    printf("topo[0]: %d\n", p->dado[0]);
 
 
 
