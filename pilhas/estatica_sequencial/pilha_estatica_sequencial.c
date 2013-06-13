@@ -28,9 +28,9 @@ void push (Pilha *p, int dado) {
     }
 }
 
-// Seek (Verifica se a pilha está vazia, caso não esteja, retorna o valor do elemento que se encontra no topo)
+// Peek (Verifica se a pilha está vazia, caso não esteja, retorna o valor do elemento que se encontra no topo)
 
-int seek (Pilha *p) {
+int peek (Pilha *p) {
     if (isEmpty(p)) {
         printf("A lista está vazia, não existe elementos nela.\n");
     } else {
@@ -62,7 +62,7 @@ int main () {
     Pilha *p = create();
 
     push(p, 182);
-    printf("topo[0]: %d\n", seek(p));
+    printf("topo[0]: %d\n", peek(p));
     pop(p);
 
     return 0;

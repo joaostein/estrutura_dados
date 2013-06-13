@@ -43,9 +43,9 @@ int pop (Fila *f) {
     }
 }
 
-// Seek (Retorna o valor que está no início da fila)
+// Peek (Retorna o valor que está no início da fila)
 
-int seek (Fila *f) {
+int peek (Fila *f) {
     if (isEmpty(f)) {
         printf("Impossível consultar o dado do primeiro da fila. A fila está vazia.\n");
     } else {
@@ -65,7 +65,7 @@ int main () {
     Fila *f = create();
     
     push(f, 1);
-    printf("Dado consultado (Primeiro da fila): %d\n", seek(f));
+    printf("Dado consultado (Primeiro da fila): %d\n", peek(f));
     printf("Removido elemento (%d).\n", pop(f));
 
     return 0;
