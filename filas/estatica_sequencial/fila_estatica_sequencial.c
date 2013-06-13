@@ -19,6 +19,7 @@ Fila *create () {
 }
 
 // Push (Adiciona um elemento ao final da fila - FIFO [First in, First Out])
+
 void push (Fila *f, int elemento) {
     if (f->quantidadeElementos == TAMANHO) {
         printf("A fila está cheia. Não suporta novos elementos.\n");
@@ -29,6 +30,7 @@ void push (Fila *f, int elemento) {
 }
 
 // Pop (Remove o elemento que se encontra no início da fila)
+
 int pop (Fila *f) {
     if (f->quantidadeElementos == 0) {
         printf("Impossível remover elementos. A fila está vazia.\n");
@@ -43,16 +45,26 @@ int pop (Fila *f) {
 
 // Seek (Retorna o valor que está no início da fila)
 
+int seek (Fila *f) {
+    if (f->quantidadeElementos == 0) {
+        printf("Impossível consultar o dado do primeiro da fila. A fila está vazia.\n");
+    } else {
+        return f->elemento[f->inicio];
+    }
+}
+
 // isEmpty? (Verifica se a fila está vazia)
+
+
+
 
 
 int main () {
 
     Fila *f = create();
     
-    push(f, 182);
-    printf("Elemento[0]: %d\n", f->elemento[0]);
-
+    push(f, 1);
+    printf("Dado consultado (Primeiro da fila): %d\n", seek(f));
     printf("Removido elemento (%d).\n", pop(f));
 
     return 0;
