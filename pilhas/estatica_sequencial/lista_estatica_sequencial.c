@@ -30,6 +30,17 @@ void push (Pilha *p, int dado) {
 
 // Seek
 
+int seek (Pilha *p) {
+    if (p->topo == -1) {
+        printf("A lista está vazia, não existe elementos nela.\n");
+    } else {
+        int dado;
+        dado = p->dado[p->topo];
+        return dado;
+    }
+}
+
+
 // Pop
 
 // isEmpty?
@@ -39,9 +50,9 @@ int main () {
     
     Pilha *p = create();
 
-    push(p, 15);
+    push(p, 182);
     
-    printf("topo[0]: %d\n", p->dado[0]);
+    printf("topo[0]: %d\n", seek(p));
 
 
 
